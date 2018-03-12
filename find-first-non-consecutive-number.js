@@ -14,13 +14,15 @@ function firstNonConsecutive (arr) {
     return a-b;
   });
 
- for(var i = 0; i < sortedArray.length; i++) {
-   if(sortedArray[i + 1] - sortedArray[i] >= 2) {
-     return sortedArray[i + 1];
+ for(var i = 1; i < sortedArray.length; i++) {
+   if(sortedArray[i] - sortedArray[i-1] >= 2) {
+     return sortedArray[i];
    }
  }
  return null;
 }
+
+console.log(firstNonConsecutive([1,2,3,5,6,8]));
 
 
 /*
