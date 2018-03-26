@@ -11,11 +11,11 @@ Hint: Do not modify the original array.
 */
 
 function sumTwoSmallestNumbers(numbers) {
-  numbers.sort((a,b)=>{
-    return a-b;
-  })
+  const newArray = numbers.filter(elem => elem >= 0);
 
-  return numbers[0] + numbers[1];
+  newArray.sort((a,b)=> a-b);
+
+  return newArray[0] + newArray[1];
 };
 
 console.log(sumTwoSmallestNumbers([5, 8, 12, 19, 22]));
