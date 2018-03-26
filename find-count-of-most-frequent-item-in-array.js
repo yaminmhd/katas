@@ -17,21 +17,28 @@ function mostFrequentItemCount(collection) {
     return 0;
   }
 
-  for(let i =0; i<collection.length;i++){
-    const item = collection[i];
+  collection.forEach(item=> {
     if(numberofOccurences[item] === undefined){
       numberofOccurences[item] = 1;
     }else{
-      numberofOccurences[item]++;
+      numberofOccurences[item] += 1;
     }
 
     if(numberofOccurences[item] > compare){
       compare = numberofOccurences[item];
       mostFrequent = compare;
     }
-  }
+  })
+  // for(let i =0; i<collection.length;i++){
+  //   const item = collection[i];
+  //   if(numberofOccurences[item] === undefined){
+  //     numberofOccurences[item] = 1;
+  //   }else{
+  //     numberofOccurences[item]++;
+  //   }
+  // }
   return mostFrequent;
 }
 
-//console.log(mostFrequentItemCount([3, -1, -1, -1, 2, 3, -1, 3, -1, 2, 4, 9, 3]))
-console.log(mostFrequentItemCount([]))
+console.log(mostFrequentItemCount([3, -1, -1, -1, 2, 3, -1, 3, -1, 2, 4, 9, 3]))
+//
